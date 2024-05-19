@@ -64,10 +64,6 @@ jobs:
         working-directory: ./
         run: cmake --build ./build --target interpreter --config Release
 
-      - name: Pack project
-        working-directory: ./build/
-        run: cpack .
-
       - name: Update release
         uses: actions/upload-release-asset@v1
         env:
@@ -90,10 +86,6 @@ jobs:
       - name: Build project
         working-directory: ./
         run: cmake --build ./build --target interpreter --config Release
-
-      - name: Pack project
-        working-directory: ./build/
-        run: cpack .
 
       - name: Update release
         uses: actions/upload-release-asset@v1
