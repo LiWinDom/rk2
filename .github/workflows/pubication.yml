@@ -71,7 +71,7 @@ jobs:
         with:
           upload_url: ${{ needs.create_release.outputs.upload_url }}
           asset_name: Interpreter-${{github.ref_name}}-x86.exe
-          asset_path: ./bin/Win32/Release/Interpreter-${{github.ref_name}}.exe
+          asset_path: ./bin/Win32/Release/Interpreter.exe
           asset_content_type: application/exe
   build_windows_x64:
     runs-on: windows-latest
@@ -94,7 +94,7 @@ jobs:
         with:
           upload_url: ${{ needs.create_release.outputs.upload_url }}
           asset_name: Interpreter-${{github.ref_name}}-x64.exe
-          asset_path: ./bin/x64/Release/Interpreter-${{github.ref_name}}.exe
+          asset_path: ./bin/x64/Release/Interpreter.exe
           asset_content_type: application/exe
 
   build_macos:
