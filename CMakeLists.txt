@@ -30,9 +30,9 @@ FetchContent_MakeAvailable(googletest)
 enable_testing()
 
 add_executable(${TEST_PROJECT_NAME}
-  ./src/tests/Mock_TerminalExpression_Minus.h
-  ./src/tests/Mock_TerminalExpression_Number.h
-  ./src/tests/Mock_TerminalExpression_Plus.h
+  ./src/tests/TerminalExpression_Number.cc
+  ./src/tests/TerminalExpression_Plus.cc
+  ./src/tests/TerminalExpression_Minus.cc
   ./src/tests/Interpreter.cc
   ${GMOCK_TESTS_SOURCE_FILES}
 )
