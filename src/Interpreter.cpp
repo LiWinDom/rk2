@@ -1,4 +1,5 @@
 #include <stack>
+#include <string>
 #include <vector>
 
 // Interpreter namespace
