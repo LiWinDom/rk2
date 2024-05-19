@@ -1,4 +1,4 @@
-name: CMake
+name: Testing
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  build_linux:
+  linux:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -24,7 +24,7 @@ jobs:
         working-directory: ./bin/Release/
         run: ./interpreter_test
 
-  build_windows_x86:
+  windows-x86:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
@@ -41,7 +41,7 @@ jobs:
         working-directory: ./bin/Win32/Release/
         run: ./interpreter_test
 
-  build_windows_x64:
+  windows-x64:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
@@ -58,7 +58,7 @@ jobs:
         working-directory: ./bin/x64/Release/
         run: ./interpreter_test
 
-  build_macos:
+  macos:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
