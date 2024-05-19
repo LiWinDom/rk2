@@ -6,17 +6,18 @@ else ()
   set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ../bin/${CMAKE_BUILD_TYPE})
 endif ()
 
-set(PROJECT_NAME intepreter)
+set(PROJECT_NAME interpreter)
 project(${PROJECT_NAME})
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(${PROJECT_NAME} ./src/main.cpp)
+install(TARGETS ${PROJECT_NAME})
 
 
 # Testing
-set(TEST_PROJECT_NAME intepreter_test)
+set(TEST_PROJECT_NAME interpreter_test)
 
 include(FetchContent)
 FetchContent_Declare(
@@ -40,3 +41,5 @@ target_link_libraries(${TEST_PROJECT_NAME} GTest::gtest_main gmock_main)
 
 include(GoogleTest)
 gtest_discover_tests(${TEST_PROJECT_NAME})
+
+install(TARGETS ${TEST_PROJECT_NAME})
