@@ -33,7 +33,7 @@ add_executable(${TEST_PROJECT_NAME}
   ./src/tests/Mock_TerminalExpression_Minus.h
   ./src/tests/Mock_TerminalExpression_Number.h
   ./src/tests/Mock_TerminalExpression_Plus.h
-  ./src/tests/main.cc
+  ./src/tests/Interpreter.cc
   ${GMOCK_TESTS_SOURCE_FILES}
 )
 target_link_libraries(${TEST_PROJECT_NAME} GTest::gtest_main gmock_main)
