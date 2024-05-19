@@ -45,7 +45,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ needs.build_source.outputs.upload_url }}
+          upload_url: ${{ needs.create_release.outputs.upload_url }}
           asset_name: Interpreter-${{github.ref_name}}.deb
           asset_path: ./bin/Release/Interpreter-${{github.ref_name}}.deb
           asset_content_type: application/deb
@@ -73,7 +73,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ needs.build_source.outputs.upload_url }}
+          upload_url: ${{ needs.create_release.outputs.upload_url }}
           asset_name: Interpreter-${{github.ref_name}}-x86.exe
           asset_path: ./bin/Win32/Release/Interpreter-${{github.ref_name}}.exe
           asset_content_type: application/exe
@@ -100,7 +100,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ needs.build_source.outputs.upload_url }}
+          upload_url: ${{ needs.create_release.outputs.upload_url }}
           asset_name: Interpreter-${{github.ref_name}}-x64.exe
           asset_path: ./bin/x64/Release/Interpreter-${{github.ref_name}}.exe
           asset_content_type: application/exe
@@ -128,7 +128,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ needs.build_source.outputs.upload_url }}
+          upload_url: ${{ needs.create_release.outputs.upload_url }}
           asset_name: Interpreter-${{github.ref_name}}.dmg
           asset_path: ./bin/Release/Interpreter-${{github.ref_name}}.dmg
           asset_content_type: application/dmg
