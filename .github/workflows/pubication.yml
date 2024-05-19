@@ -79,6 +79,7 @@ jobs:
           asset_content_type: application/exe
   build_windows_x64:
     runs-on: windows-latest
+    needs: create_release
     steps:
       - uses: actions/checkout@v3
 
@@ -106,6 +107,7 @@ jobs:
 
   build_macos:
     runs-on: macos-latest
+    needs: create_release
     steps:
       - uses: actions/checkout@v3
 
